@@ -10,7 +10,8 @@ const burger = (props) => {
     // so it gives you an array of the keys, the values are not part of the array
     let transformedIngredients = Object.keys(props.ingredients)
         .map(igKey => {
-            return [...Array(props.ingredients[igKey])].map((_, i) => { // get the keys as array
+            // return an arrayA of arrays, each array's length is the value in ingredients, arrayA's length is same as ingredients length
+            return [...Array(props.ingredients[igKey])].map((_, i) => {  // (value, index)
                 return <BurgerIngredient key={igKey + i} type={igKey} /> // get the JSX by using keys as key
             } );
         } )

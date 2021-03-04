@@ -75,7 +75,11 @@ class BurgerBuilder extends Component {
     // cannot use this state: will trigger error by this keyword when accessing state
     // purchaseHandler () {}
     purchaseHandler = () => {
-        this.setState({purchasing: true});
+        this.setState( { purchasing: true } );
+    }
+
+    purchaseCancelHandler = () => {
+        this.setState( {purchasing: false } );
     }
 
     removeIngredientHandler = (type) => {
@@ -113,7 +117,8 @@ class BurgerBuilder extends Component {
 
         return (
             <Aux>
-                <Modal show={this.state.purchasing}>
+                <Modal show={this.state.purchasing}
+                        modalClosed={this.purchaseCancelHandler}>
                     <OrderSummary ingredients={this.state.ingredients} />
                 </Modal>
                 <Burger ingredients={this.state.ingredients}/>

@@ -1,7 +1,7 @@
 // functional component
 import React, { Component } from 'react';
 import classes from './Modal.css';
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
 class Modal extends Component {
@@ -9,7 +9,7 @@ class Modal extends Component {
     shouldComponentUpdate(nextProps, nextState) {
         return nextProps.show !== this.props.show;
     }
-    
+
     componentDidUpdate () {
         console.log('[Modal.js] componentDidUpdate');
     }
